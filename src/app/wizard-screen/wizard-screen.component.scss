@@ -1,0 +1,23 @@
+:host {
+  grid-area: main; 
+  background-color: white;
+  padding: 48px;
+}
+
+h5 {
+  color: rgb(108, 117, 125);
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: normal;
+  letter-spacing: 2px;
+  font-size: 14px
+}
+
+button {
+  padding: 6px 44.5px;
+  background-color: #008eff;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+}

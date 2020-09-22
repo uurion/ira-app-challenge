@@ -1,0 +1,31 @@
+:host {
+  grid-area: menu;
+  background-color: white;
+  height: 100vh;
+  padding: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  li {
+    padding: 16px 34px;
+    font-size: 14px;
+    i {
+      margin-right: 5px;
+    }
+    &.complete {
+      i {
+        color: #5dcc97;
+      }
+    }
+    &.active {
+      background-color: #f6f6f6;
+      font-weight: bold;
+      i {
+        color: #008eff;
+      }
+    }
+  }
+}

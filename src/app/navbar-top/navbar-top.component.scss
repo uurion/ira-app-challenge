@@ -1,0 +1,84 @@
+:host {
+  grid-area: header;
+  position: relative;
+  text-align: center;
+  padding: 10px;
+}
+
+.logo {
+  position: absolute;
+  margin-left: 24px;
+  text-align: left;
+  h3 {
+    margin: 0;
+    font-size: 20px;
+  }
+  top: 15px;
+  p {
+    margin: 6px 0;
+  }
+}
+
+ul {
+  margin: 4px 0 16px;
+}
+
+li {
+  line-height: 40px;
+  margin: 0 135px;
+  display: inline-block;
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  .circle {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    background-color: dodgerblue;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px dodgerblue, inset 0 0 0 4px #fff;
+    color: white;
+    display: inline-block;
+  }
+  .title {
+    position: absolute;
+    left: -80px;
+    bottom: -20px;
+    line-height: 18px;
+    font-size: 12px;
+    width: 200px;
+  }
+}
+
+li::before{
+  content: '';
+  position: absolute;
+  top: 1.2em;
+  left: -270px;
+  width: 270px;
+  height: .2em;
+  background: dodgerblue;
+  // z-index: -1;
+}
+
+
+li:first-child::before {
+  display: none;
+}
+
+.active {
+  .circle {
+    background: dodgerblue;
+  }
+}
+
+.active ~ li {
+  .circle {
+  background: #e9e9e9;
+  box-shadow: none;
+  }
+}
+
+.active ~ li::before {
+  background: #e9e9e9;
+}
