@@ -3,29 +3,60 @@
 <form [formGroup]="beneficiariesForm" (ngSubmit)="onSubmit()">
 
   <div formArrayName="primary">
-    <button type="button" type="button" (click)="addBeneficiary()">Add</button>
-
-    <div *ngFor="let beneficiary of beneficiaries.controls; let i = index">
+    <div class="form-beneficiary" *ngFor="let beneficiary of beneficiaries.controls; let i = index">
       <div [formGroupName]="i">
-        <label>
-          FullName:
-          <input type="text" formControlName="fullName">
-        </label>
-        <label>
-          Date of Birth
-          <input type="text" formControlName="birthDate">
-        </label>
+        <div class="input-group">
+          <label for="{{'fullName' + i}}">
+            Full Name
+          </label>
+          <input class="input-wide" type="text" formControlName="fullName" id="{{'fullName' + i}}"
+            placeholder="John Doe">
+        </div>
+        <div class="input-group">
+          <label for="{{'birthDate' + i}}">
+            Date of Birth
+          </label>
+          <input type="text" formControlName="birthDate" id="{{'birthDate' + i}}"
+            placeholder="MM/DD/YYYY">
+        </div>
+        <div class="input-group">
+          <label for="{{'idType' + i}}">&nbsp;</label>
+          <input class="input-narrow" type="text" formControlName="idType" id="{{'idType' + i}}">
+        </div>
+        <div class="input-group">
+          <label for="{{'idValue' + i}}">&nbsp;</label>
+          <input class="input-narrow" type="text" formControlName="idValue" id="{{'idValue' + i}}"
+            placeholder="Optional">
+        </div>
+        <div class="input-group">
+          <label for="{{'relationshipType' + i}}">
+            Relationship
+          </label>
+          <input type="text" formControlName="relationshipType" id="{{'relationshipType' + i}}">
+        </div>
+        <div class="input-group">
+          <label for="{{'ownershipValue' + i}}">&nbsp;</label>
+          <input class="input-narrow" type="number" formControlName="ownershipValue"
+            id="{{'ownershipValue' + i}}" placeholder="0 %">
+        </div>
+        <div class="btn-group-beneficiary">
+          <button type="button" class="btn-ok" (click)="addBeneficiary()">
+            <i class="uil uil-check"></i>
+          </button>
+          <button type="button" class="btn-cancel" (click)="removeBeneficiary(i)">
+            <i class="uil uil-times"></i>
+          </button>
+        </div>
       </div>
     </div>
   </div>
 
-  <label>
-    Contingent Beneficiaries
-    <input type="checkbox" formControlName="contingent">
-  </label>
+  <div class="total-ownership" [ngClass]="{'valid': isTotalOwnershipValid}">
+    <i class="uil uil-check" [hidden]="!isTotalOwnershipValid"></i>
+    Primary Total: {{totalOwnership}}%
+  </div>
 
+  <br style="clear:both;" />
 
-  <button type="submit" [disabled]="!beneficiariesForm.valid">Submit</button>
+  <h5>Contingent Beneficiaries <input type="checkbox" formControlName="contingent"></h5>
 </form>
-
-<h5>Contingent Beneficiaries</h5>

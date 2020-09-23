@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WizardScreenComponent implements OnInit {
 
+  isNextStepDisabled = true;
+
   constructor() { }
+
+  onValidityUpdate(isValid: boolean) {
+    this.isNextStepDisabled = !isValid;
+  }
 
   ngOnInit(): void {
   }

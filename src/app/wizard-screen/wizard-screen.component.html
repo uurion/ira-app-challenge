@@ -1,5 +1,5 @@
 <h5>Beneficiaries</h5>
 
-<ira-beneficiaries></ira-beneficiaries>
+<ira-beneficiaries (validity)="onValidityUpdate($event)"></ira-beneficiaries>
 
-<button role="button">Next</button>
+<button type="button" [disabled]="isNextStepDisabled">Next</button>

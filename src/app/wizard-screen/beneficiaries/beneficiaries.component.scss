@@ -1,3 +1,89 @@
 h5 {
   margin-top: 48px;
 }
+
+.form-beneficiary {
+  height: 60px;
+  margin: 24px 0;
+}
+
+.input-group {
+  margin-right: 32px;
+  float: left;
+  label, input {
+    display: block;
+  }
+
+  label {
+    font-size: 14px;
+    margin-bottom: 3px;
+  }
+
+  input {
+    background-color: #f6f6f6;
+    border: none;
+    border-radius: 5px;
+    height: 36px;
+    padding: 6px 12px;
+    font-size: 16px;
+  }
+
+  ::placeholder {
+    color: #c7c7c7;
+  }
+}
+
+.input-wide {
+  width: 240px;
+}
+
+.input-narrow {
+  width: 80px;
+}
+
+.btn-group-beneficiary {
+  padding-top: 30px;
+  button {
+    background-color: white;
+    border: 1px solid white;
+    i {
+      font-size: 24px;
+    }
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      border: 1px solid #c7c7c7;
+    }
+  }
+  .btn-ok {
+    color: #5dcc97;
+  }
+  .btn-cancel {
+    color: #ed5b5b;
+  }
+  vertical-align: bottom;
+}
+
+.form-header {
+  margin-top: 48px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.total-ownership {
+  background-color: #fff9f1;
+  border-radius: 5px;
+  color: #fdba05;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 6px 12px;
+  margin-top: 30px;
+  width: fit-content;
+
+  &.valid {
+    color: #6cd0a0;
+    background-color: #f3fdf8;
+  }
+}
