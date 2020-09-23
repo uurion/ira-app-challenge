@@ -1,6 +1,6 @@
 <h5>Primary Beneficiaries</h5>
 
-<form [formGroup]="beneficiariesForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="beneficiariesForm">
 
   <div formArrayName="primary">
     <div class="form-beneficiary" *ngFor="let beneficiary of beneficiaries.controls; let i = index">
@@ -51,12 +51,9 @@
     </div>
   </div>
 
-  <div class="total-ownership" [ngClass]="{'valid': isTotalOwnershipValid}">
-    <i class="uil uil-check" [hidden]="!isTotalOwnershipValid"></i>
-    Primary Total: {{totalOwnership}}%
-  </div>
+  <ira-total-ownership [totalOwnershipValue]="totalOwnershipValue" [isTotalOwnershipValid]="isTotalOwnershipValid"></ira-total-ownership>
 
-  <br style="clear:both;" />
+  <br />
 
   <h5>Contingent Beneficiaries <input type="checkbox" formControlName="contingent"></h5>
 </form>

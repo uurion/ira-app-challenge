@@ -16,6 +16,7 @@ ul {
       margin-right: 5px;
     }
     &.complete {
+      color: black;
       i {
         color: #5dcc97;
       }
@@ -26,6 +27,9 @@ ul {
       i {
         color: #008eff;
       }
+    }
+    &.inactive {
+      color: #c7c7c7;
     }
   }
 }

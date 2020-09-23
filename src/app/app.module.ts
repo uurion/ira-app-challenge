@@ -7,6 +7,7 @@ import { NavbarTopComponent } from './navbar-top/navbar-top.component';
 import { WizardStepsComponent } from './wizard-steps/wizard-steps.component';
 import { WizardScreenComponent } from './wizard-screen/wizard-screen.component';
 import { BeneficiariesComponent } from './wizard-screen/beneficiaries/beneficiaries.component';
+import { TotalOwnershipComponent } from './wizard-screen/beneficiaries/total-ownership/total-ownership.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { BeneficiariesComponent } from './wizard-screen/beneficiaries/beneficiar
     WizardStepsComponent,
     WizardScreenComponent,
     BeneficiariesComponent,
+    TotalOwnershipComponent,
   ],
   imports: [
     BrowserModule,

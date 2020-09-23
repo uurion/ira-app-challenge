@@ -1,0 +1,16 @@
+.total-ownership {
+  background-color: #fff9f1;
+  border-radius: 5px;
+  color: #fdba05;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 6px 12px;
+  margin-top: 30px;
+  width: fit-content;
+
+  &.valid {
+    color: #6cd0a0;
+    background-color: #f3fdf8;
+  }
+}
