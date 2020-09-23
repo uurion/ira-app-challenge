@@ -1,8 +1,31 @@
 <h5>Primary Beneficiaries</h5>
 
-<label>
-  Name: {{ name.value }}
-  <input type="text" [formControl]="name">
-</label>
+<form [formGroup]="beneficiariesForm" (ngSubmit)="onSubmit()">
+
+  <div formArrayName="primary">
+    <button type="button" type="button" (click)="addBeneficiary()">Add</button>
+
+    <div *ngFor="let beneficiary of beneficiaries.controls; let i = index">
+      <div [formGroupName]="i">
+        <label>
+          FullName:
+          <input type="text" formControlName="fullName">
+        </label>
+        <label>
+          Date of Birth
+          <input type="text" formControlName="birthDate">
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <label>
+    Contingent Beneficiaries
+    <input type="checkbox" formControlName="contingent">
+  </label>
+
+
+  <button type="submit" [disabled]="!beneficiariesForm.valid">Submit</button>
+</form>
 
 <h5>Contingent Beneficiaries</h5>
