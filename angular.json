@@ -39,7 +39,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ira-app",
+            "outputPath": "docs",
+            "deployUrl": "https://uurion.github.io/ira-app-challenge/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
