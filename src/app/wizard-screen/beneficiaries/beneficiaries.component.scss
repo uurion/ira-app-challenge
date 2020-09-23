@@ -10,27 +10,34 @@ h5 {
 .input-group {
   margin-right: 32px;
   float: left;
-  label,
+
   input {
-    display: block;
+    border: 1px solid #f6f6f6;
+    &.ng-invalid {
+      border: 1px solid #ed5b5b;
+    }
   }
 
   label {
+    display: block;
     font-size: 14px;
     margin-bottom: 3px;
   }
 
-  input {
+  input, select {
     background-color: #f6f6f6;
     border: none;
     border-radius: 5px;
-    height: 36px;
-    padding: 6px 12px;
+    padding: 12px 8px;
     font-size: 16px;
   }
 
   ::placeholder {
     color: #c7c7c7;
+  }
+
+  &.right-margin-small {
+    margin-right: 16px;
   }
 }
 

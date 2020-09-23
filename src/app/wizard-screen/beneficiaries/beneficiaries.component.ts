@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'ira-beneficiaries',
@@ -9,6 +9,17 @@ import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 export class BeneficiariesComponent implements OnInit {
 
   @Output() validity = new EventEmitter<boolean>(false);
+
+  relationshipTypes = [
+    { name: 'Trust', id: 1 },
+    { name: 'LLC', id: 2 },
+    { name: 'Partnership', id: 3 }
+  ];
+
+  idTypes = [
+    { name: 'SSN', id: 1 },
+    { name: 'Tax ID', id: 2 }
+  ];
 
   constructor(private fb: FormBuilder) { }
 
@@ -21,7 +32,7 @@ export class BeneficiariesComponent implements OnInit {
 
   private buildBeneficiaryFormGroup() : FormGroup {
     return this.fb.group({
-      fullName: this.fb.control(''),
+      fullName: this.fb.control('', Validators.required),
       birthDate: this.fb.control(''),
       idType: this.fb.control(''),
       idValue: this.fb.control(''),

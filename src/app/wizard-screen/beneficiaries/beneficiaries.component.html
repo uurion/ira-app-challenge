@@ -10,7 +10,7 @@
             Full Name
           </label>
           <input class="input-wide" type="text" formControlName="fullName" id="{{'fullName' + i}}"
-            placeholder="John Doe">
+            placeholder="John Doe" required>
         </div>
         <div class="input-group">
           <label for="{{'birthDate' + i}}">
@@ -19,20 +19,30 @@
           <input type="text" formControlName="birthDate" id="{{'birthDate' + i}}"
             placeholder="MM/DD/YYYY">
         </div>
-        <div class="input-group">
+        <div class="input-group right-margin-small">
           <label for="{{'idType' + i}}">&nbsp;</label>
-          <input class="input-narrow" type="text" formControlName="idType" id="{{'idType' + i}}">
+          <select formControlName="idType"  id="{{'idType' + i}}">
+            <option [ngValue]="null" disabled>Select</option>
+            <option *ngFor="let x of idTypes" [ngValue]="x.id">
+             {{ x.name }}
+            </option>
+          </select>
         </div>
         <div class="input-group">
           <label for="{{'idValue' + i}}">&nbsp;</label>
           <input class="input-narrow" type="text" formControlName="idValue" id="{{'idValue' + i}}"
             placeholder="Optional">
         </div>
-        <div class="input-group">
+        <div class="input-group right-margin-small">
           <label for="{{'relationshipType' + i}}">
             Relationship
           </label>
-          <input type="text" formControlName="relationshipType" id="{{'relationshipType' + i}}">
+          <select formControlName="relationshipType"  id="{{'relationshipType' + i}}">
+            <option [ngValue]="null" disabled>Select</option>
+            <option *ngFor="let x of relationshipTypes" [ngValue]="x.id">
+             {{ x.name }}
+            </option>
+          </select>
         </div>
         <div class="input-group">
           <label for="{{'ownershipValue' + i}}">&nbsp;</label>
